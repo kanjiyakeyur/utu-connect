@@ -32,7 +32,6 @@ class _ShowNotificationState extends State<ShowNotification> {
   var _expanded = false;
   @override
   Widget build(BuildContext context) {
-    final key = new GlobalKey<ScaffoldState>();
     //print(widget.data);
     //for expiredate for ntification
     final bool _isEmptyDate =
