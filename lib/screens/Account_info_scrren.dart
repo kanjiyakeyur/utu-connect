@@ -14,7 +14,7 @@ class AccountInfoScreen extends StatefulWidget {
 
 class _AccountInfoScreenState extends State<AccountInfoScreen> {
   bool _showwidget = false;
-  bool _loading = true;
+  bool _loading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -229,6 +229,7 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
                     height: 50,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       RaisedButton(
                         shape: RoundedRectangleBorder(
@@ -281,9 +282,10 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
                       if (_showwidget)
                         _loading
                             ? Container(
-                                width: 25,
-                                height: 25,
+                                width: 27,
+                                height: 27,
                                 child: CircularProgressIndicator(
+                                  backgroundColor: Colors.pink.shade300,
                                   strokeWidth: 2,
                                 ),
                               )
