@@ -27,6 +27,7 @@ class DrawerScreen extends StatelessWidget {
         left: mediaWidth * 0.20,
         right: mediaWidth * 0.20,
       ),
+      color: Colors.black54,
       child: Center(
         child: ListView(
           children: <Widget>[
@@ -34,19 +35,28 @@ class DrawerScreen extends StatelessWidget {
               height: 30,
             ),
             Container(
+              height: 180,
+              width: 90,
               decoration: BoxDecoration(
-                color: Colors.white54,
+                //color: Colors.white54,
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Image.asset(
-                'assets/images/utulogo.png',
-                fit: BoxFit.cover,
+                'assets/images/logo.png',
+                fit: BoxFit.contain,
               ),
             ),
             SizedBox(
               height: 40,
             ),
-            OutlineButton.icon(
+            RaisedButton.icon(
+              padding: EdgeInsets.all(18),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+                side: BorderSide(
+                  color: Colors.grey[100],
+                ),
+              ),
               onPressed: () {
                 //Navigator.pop(context,true);
                 if (routeName == HomeScreen.routeName) {
@@ -57,21 +67,19 @@ class DrawerScreen extends StatelessWidget {
                   //Navigator.of(context).pushNamed(HomeScreen.routeName);
                 }
               },
+              color: Colors.white,
               icon: Icon(
                 Icons.home,
                 color: routeName == HomeScreen.routeName
                     ? Colors.pink.shade300
-                    : Colors.white,
+                    : Colors.black45,
               ),
-              borderSide: routeName == HomeScreen.routeName
-                  ? BorderSide(color: Colors.pink.shade300, width: 1)
-                  : null,
               label: Text(
                 'Home',
                 style: TextStyle(
                   color: routeName == HomeScreen.routeName
                       ? Colors.pink.shade300
-                      : Colors.white,
+                      : Colors.black45,
                   //fontSize: 20
                 ),
               ),
@@ -79,7 +87,11 @@ class DrawerScreen extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            OutlineButton.icon(
+            RaisedButton.icon(
+              padding: EdgeInsets.all(18),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.grey[100])),
               onPressed: () {
                 if (routeName == HomeScreen.routeName) {
                   Navigator.pop(context);
@@ -94,17 +106,15 @@ class DrawerScreen extends StatelessWidget {
                 Icons.person,
                 color: routeName == StudentLoginScreen.routeName
                     ? Colors.pink.shade300
-                    : Colors.white,
+                    : Colors.black45,
               ),
-              borderSide: routeName == StudentLoginScreen.routeName
-                  ? BorderSide(color: Colors.pink.shade300, width: 1)
-                  : null,
+              color: Colors.white,
               label: Text(
                 'Student Login',
                 style: TextStyle(
                   color: routeName == StudentLoginScreen.routeName
                       ? Colors.pink.shade300
-                      : Colors.white,
+                      : Colors.black45,
                   //fontSize: 20
                 ),
               ),
@@ -112,40 +122,46 @@ class DrawerScreen extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            OutlineButton.icon(
-                onPressed: () {
-                  if (routeName == HomeScreen.routeName) {
-                    Navigator.pop(context);
-                    Navigator.of(context).pushNamed(SisScreen.routeName);
-                  } else {
-                    Navigator.pop(context);
-                    Navigator.pop(context);
-                    Navigator.of(context).pushNamed(SisScreen.routeName);
-                  }
-                },
-                icon: Icon(
-                  Icons.assignment_ind,
+            RaisedButton.icon(
+              padding: EdgeInsets.all(18),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.grey[100])),
+              onPressed: () {
+                if (routeName == HomeScreen.routeName) {
+                  Navigator.pop(context);
+                  Navigator.of(context).pushNamed(SisScreen.routeName);
+                } else {
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                  Navigator.of(context).pushNamed(SisScreen.routeName);
+                }
+              },
+              icon: Icon(
+                Icons.assignment_ind,
+                color: routeName == SisScreen.routeName
+                    ? Colors.pink.shade300
+                    : Colors.black45,
+              ),
+              label: Text(
+                'SiS',
+                style: TextStyle(
                   color: routeName == SisScreen.routeName
                       ? Colors.pink.shade300
-                      : Colors.white,
+                      : Colors.black45,
+                  //fontSize: 20
                 ),
-                label: Text(
-                  'SiS',
-                  style: TextStyle(
-                    color: routeName == SisScreen.routeName
-                        ? Colors.pink.shade300
-                        : Colors.white,
-                    //fontSize: 20
-                  ),
-                ),
-                borderSide: routeName == SisScreen.routeName
-                    ? BorderSide(color: Colors.pink.shade300, width: 1)
-                    : null,
-                color: Colors.indigo.shade700),
+              ),
+              color: Colors.white,
+            ),
             SizedBox(
               height: 15,
             ),
-            OutlineButton.icon(
+            RaisedButton.icon(
+              padding: EdgeInsets.all(18),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.grey[100])),
               onPressed: () {
                 if (routeName == HomeScreen.routeName) {
                   Navigator.pop(context);
@@ -161,24 +177,26 @@ class DrawerScreen extends StatelessWidget {
                 Icons.assignment,
                 color: routeName == AccountInfoScreen.routeName
                     ? Colors.pink.shade300
-                    : Colors.white,
+                    : Colors.black45,
               ),
-              borderSide: routeName == AccountInfoScreen.routeName
-                  ? BorderSide(color: Colors.pink.shade300, width: 1)
-                  : null,
+              color: Colors.white,
               label: Text(
                 'Account',
                 style: TextStyle(
                   color: routeName == AccountInfoScreen.routeName
                       ? Colors.pink.shade300
-                      : Colors.white,
+                      : Colors.black45,
                 ),
               ),
             ),
             SizedBox(
               height: 15,
             ),
-            OutlineButton.icon(
+            RaisedButton.icon(
+              padding: EdgeInsets.all(18),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.grey[100])),
               onPressed: () {
                 if (routeName == HomeScreen.routeName) {
                   Navigator.pop(context);
@@ -194,24 +212,27 @@ class DrawerScreen extends StatelessWidget {
                 Icons.help_outline,
                 color: routeName == HelpScreen.routeName
                     ? Colors.pink.shade300
-                    : Colors.white,
+                    : Colors.black45,
               ),
-              borderSide: routeName == HelpScreen.routeName
-                  ? BorderSide(color: Colors.pink.shade300, width: 1)
-                  : null,
+              color: Colors.white,
               label: Text(
                 'Help',
                 style: TextStyle(
                   color: routeName == HelpScreen.routeName
                       ? Colors.pink.shade300
-                      : Colors.white,
+                      : Colors.black45,
                 ),
               ),
             ),
             SizedBox(
               height: 15,
             ),
-            OutlineButton.icon(
+            RaisedButton.icon(
+              padding: EdgeInsets.all(18),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.red)),
+              color: Colors.red,
               onPressed: () async {
                 Navigator.of(context).pop();
                 Navigator.of(context).pushReplacementNamed('/');

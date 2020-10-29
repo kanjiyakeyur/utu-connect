@@ -65,6 +65,8 @@ flutter:
     - assets/images/instagarm.png
     - assets/images/twitter.png
     - assets/images/youtube.png
+    - assets/images/background.png
+    - assets/images/logo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
