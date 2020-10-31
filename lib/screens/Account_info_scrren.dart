@@ -84,6 +84,7 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
           ),
           drawer: DrawerScreen(AccountInfoScreen.routeName),
           body: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Container(
               //margin: EdgeInsets.all(10),
               padding: EdgeInsets.all(15),

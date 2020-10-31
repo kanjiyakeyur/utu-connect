@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:utu_connect/provider/notification.dart';
 import 'package:provider/provider.dart';
 import 'package:utu_connect/screens/help_screen.dart';
@@ -95,11 +96,15 @@ class DrawerScreen extends StatelessWidget {
               onPressed: () {
                 if (routeName == HomeScreen.routeName) {
                   Navigator.pop(context);
-                  Navigator.of(context).pushNamed(StudentLoginScreen.routeName);
+                  Navigator.of(context).push(PageTransition(
+                      child: StudentLoginScreen(),
+                      type: PageTransitionType.fade));
                 } else {
                   Navigator.pop(context);
                   Navigator.pop(context);
-                  Navigator.of(context).pushNamed(StudentLoginScreen.routeName);
+                  Navigator.of(context).push(PageTransition(
+                      child: StudentLoginScreen(),
+                      type: PageTransitionType.fade));
                 }
               },
               icon: Icon(
@@ -130,11 +135,13 @@ class DrawerScreen extends StatelessWidget {
               onPressed: () {
                 if (routeName == HomeScreen.routeName) {
                   Navigator.pop(context);
-                  Navigator.of(context).pushNamed(SisScreen.routeName);
+                  Navigator.of(context).push(PageTransition(
+                      child: SisScreen(), type: PageTransitionType.fade));
                 } else {
                   Navigator.pop(context);
                   Navigator.pop(context);
-                  Navigator.of(context).pushNamed(SisScreen.routeName);
+                  Navigator.of(context).push(PageTransition(
+                      child: SisScreen(), type: PageTransitionType.fade));
                 }
               },
               icon: Icon(
@@ -165,11 +172,15 @@ class DrawerScreen extends StatelessWidget {
               onPressed: () {
                 if (routeName == HomeScreen.routeName) {
                   Navigator.pop(context);
-                  Navigator.of(context).pushNamed(AccountInfoScreen.routeName);
+                  Navigator.of(context).push(PageTransition(
+                      child: AccountInfoScreen(),
+                      type: PageTransitionType.fade));
                 } else {
                   Navigator.pop(context);
                   Navigator.pop(context);
-                  Navigator.of(context).pushNamed(AccountInfoScreen.routeName);
+                  Navigator.of(context).push(PageTransition(
+                      child: AccountInfoScreen(),
+                      type: PageTransitionType.fade));
                 }
                 //Navigator.of(context).pushReplacementNamed(AccountInfoScreen.routeName);
               },
@@ -200,11 +211,13 @@ class DrawerScreen extends StatelessWidget {
               onPressed: () {
                 if (routeName == HomeScreen.routeName) {
                   Navigator.pop(context);
-                  Navigator.of(context).pushNamed(HelpScreen.routeName);
+                  Navigator.of(context).push(PageTransition(
+                      child: HelpScreen(), type: PageTransitionType.fade));
                 } else {
                   Navigator.pop(context);
                   Navigator.pop(context);
-                  Navigator.of(context).pushNamed(HelpScreen.routeName);
+                  Navigator.of(context).push(PageTransition(
+                      child: HelpScreen(), type: PageTransitionType.fade));
                 }
                 //Navigator.of(context).pushReplacementNamed(HelpScreen.routeName);
               },
