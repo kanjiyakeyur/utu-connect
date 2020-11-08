@@ -43,6 +43,7 @@ class HelpScreen extends StatelessWidget {
                 }
               },
               icon: Icon(Icons.more_vert),
+              offset: Offset(0, 50),
               itemBuilder: (_) => [
                     PopupMenuItem(
                       child: Row(

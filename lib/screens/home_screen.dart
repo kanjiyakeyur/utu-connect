@@ -20,9 +20,9 @@ class HomeScreen extends StatelessWidget {
     final Shader linearGradient = LinearGradient(
       colors: <Color>[
         Colors.indigo.shade800,
-        Color.fromARGB(75, 255, 0, 205),
+        Colors.pink.shade300,
       ],
-    ).createShader(Rect.fromLTWH(135.0, 0.0, 150.0, 70.0));
+    ).createShader(Rect.fromLTWH(155.0, 0.0, 150.0, 70.0));
     return Scaffold(
       drawer: DrawerScreen(routeName),
       body: NestedScrollView(

@@ -21,9 +21,12 @@ class _LoginScreenState extends State<LoginScreen> {
   };
 
   final GlobalKey<FormState> _formKey = GlobalKey();
+  final _emailFocusNode = FocusNode();
   final _passwordFocusNode = FocusNode();
   final _loginFocusNode = FocusNode();
   var _isLoding = false;
+
+  Color color;
 
   @override
   void dispose() {
@@ -130,12 +133,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    _emailFocusNode.addListener(() {
+      setState(() {
+        color = _emailFocusNode.hasFocus ? Colors.pink : Colors.grey;
+      });
+    });
     final dh = MediaQuery.of(context).size.height;
     final dw = MediaQuery.of(context).size.width;
     print('${dh.toString()},${dw.toString()}');
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -154,11 +163,30 @@ class _LoginScreenState extends State<LoginScreen> {
                   key: _formKey,
                   child: SingleChildScrollView(
                     child: Container(
-                      width: dw * 0.72,
+                      width: dw * 0.78,
                       child: Column(
                         children: <Widget>[
                           TextFormField(
-                            decoration: InputDecoration(labelText: 'Email'),
+                            style: TextStyle(color: Colors.pink.shade300),
+                            decoration: InputDecoration(
+                              labelText: 'Email',
+                              icon: Icon(
+                                Icons.email,
+                                color: _emailFocusNode.hasFocus
+                                    ? Colors.indigo.shade700
+                                    : Colors.grey,
+                              ),
+                              labelStyle: TextStyle(
+                                color: _emailFocusNode.hasFocus
+                                    ? Colors.indigo
+                                    : Colors.grey,
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: Colors.indigo, width: 2.0),
+                              ),
+                            ),
+                            focusNode: _emailFocusNode,
                             textInputAction: TextInputAction.next,
                             keyboardType: TextInputType.emailAddress,
                             controller: _emailController,
@@ -182,12 +210,30 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           TextFormField(
                             obscureText: true,
+                            style: TextStyle(color: Colors.pink.shade300),
                             focusNode: _passwordFocusNode,
                             onFieldSubmitted: (_) {
                               FocusScope.of(context)
                                   .requestFocus(_loginFocusNode);
                             },
-                            decoration: InputDecoration(labelText: 'Password'),
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                              icon: Icon(
+                                Icons.vpn_key,
+                                color: _passwordFocusNode.hasFocus
+                                    ? Colors.indigo.shade700
+                                    : Colors.grey,
+                              ),
+                              labelStyle: TextStyle(
+                                color: _passwordFocusNode.hasFocus
+                                    ? Colors.indigo
+                                    : Colors.grey,
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: Colors.indigo, width: 2.0),
+                              ),
+                            ),
                             validator: (value) {
                               if (value.isEmpty) {
                                 return 'Please Enter The EnRoll no.';
@@ -216,7 +262,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20)),
                                   color: Colors.indigo.shade400,
-                                  elevation: 0,
+                                  elevation: 2,
                                   focusNode: _loginFocusNode,
                                   child: Text(
                                     'login',

@@ -238,7 +238,7 @@ class DrawerScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 15,
+              height: 150,
             ),
             RaisedButton.icon(
               padding: EdgeInsets.all(18),

@@ -29,11 +29,11 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
     OverviewDepartment(
         id: DateTime.now().toString(),
         image: 'assets/images/pharmacy2.jpg',
-        title: 'Phyiyo'),
+        title: 'Physiotherapy'),
     OverviewDepartment(
         id: DateTime.now().toString(),
         image: 'assets/images/cgpit3.jpg',
-        title: 'Gardan'),
+        title: 'Ground'),
     OverviewDepartment(
         id: DateTime.now().toString(),
         image: 'assets/images/pharmacy3.jpg',
