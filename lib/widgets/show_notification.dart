@@ -11,6 +11,7 @@ class ShowNotification extends StatefulWidget {
   final DateTime date;
   final String link;
   final String expiredate;
+  final String imageUrl;
 
   ///final String title;
   //final String description;
@@ -22,6 +23,7 @@ class ShowNotification extends StatefulWidget {
     @required this.date,
     @required this.link,
     @required this.expiredate,
+    @required this.imageUrl,
   });
 
   @override
@@ -154,6 +156,13 @@ class _ShowNotificationState extends State<ShowNotification> {
                                   if (!_isLinkEmpty)
                                     SizedBox(
                                       height: 10,
+                                    ),
+                                  if (widget.imageUrl != "EmptyImage")
+                                    Container(
+                                      child: Image.network(
+                                        widget.imageUrl,
+                                        fit: BoxFit.fitWidth,
+                                      ),
                                     ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.end,

@@ -162,7 +162,7 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
                     height: 7,
                   ),
                   Text(
-                    'Department :',
+                    'College :',
                     style: TextStyle(color: Colors.black45),
                   ),
                   SizedBox(
@@ -179,7 +179,7 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
                     height: 13,
                   ),
                   Text(
-                    'course :',
+                    'Department :',
                     style: TextStyle(color: Colors.black45),
                   ),
                   SizedBox(

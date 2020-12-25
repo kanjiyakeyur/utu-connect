@@ -177,74 +177,35 @@ class HelpScreen extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                'Created By: ',
+                'Created By : ',
                 style: TextStyle(fontSize: 15),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                'Keyur Kanjiya',
-                style: TextStyle(color: Colors.blue, fontSize: 20),
               ),
               SizedBox(
                 height: 15,
-              ),
-              Text(
-                'Contect Me: ',
-                style: TextStyle(fontSize: 15),
-              ),
-              FlatButton(
-                  onPressed: () async {
-                    await launch(
-                        'mailto:kanjiyakeyur01@utu.com?subject=Information Help&body=Ask Quetions');
-                  },
-                  child: Text(
-                    'kanjiyakeyur01@gmail.com',
-                    style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        color: Colors.blue,
-                        fontSize: 20),
-                  )),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                'Follow Me On: ',
-                style: TextStyle(fontSize: 15),
-              ),
-              SizedBox(
-                height: 5,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  IconButton(
-                      icon: Image.asset(
-                        'assets/images/facebook.png',
-                        fit: BoxFit.cover,
-                      ),
-                      onPressed: () async {
-                        await launch(
-                            'https://www.facebook.com/profile.php?id=100005312417316');
-                      }),
-                  IconButton(
-                      icon: Image.asset(
-                        'assets/images/instagarm.png',
-                        fit: BoxFit.cover,
-                      ),
-                      onPressed: () async {
-                        await launch(
-                            'https://instagram.com/__k._k.__?igshid=pms5gu3vyvxn');
-                      }),
-                  IconButton(
-                      icon: Image.asset(
-                        'assets/images/twitter.png',
-                        fit: BoxFit.cover,
-                      ),
-                      onPressed: () async {
-                        await launch('https://twitter.com/kanjiyakeyur1');
-                      }),
+                  Text(
+                    'Keyur Kanjiya',
+                    style: TextStyle(color: Colors.blue, fontSize: 15),
+                  ),
+                  Text(
+                    '|',
+                    style: TextStyle(color: Colors.indigo, fontSize: 15),
+                  ),
+                  Text(
+                    'Milan Vora',
+                    style: TextStyle(color: Colors.blue, fontSize: 15),
+                  ),
+                  Text(
+                    '|',
+                    style: TextStyle(color: Colors.indigo, fontSize: 15),
+                  ),
+                  Text(
+                    'Sohil Gevariya',
+                    style: TextStyle(color: Colors.blue, fontSize: 15),
+                  ),
                 ],
               ),
               SizedBox(

@@ -154,6 +154,7 @@ class UtuNotificationScreen extends StatelessWidget {
                                       reloadData[index]['datetime']),
                                   link: reloadData[index]['link'],
                                   expiredate: reloadData[index]['expiredate'],
+                                  imageUrl: reloadData[index]['image'],
                                 ),
                               ),
                             ),
